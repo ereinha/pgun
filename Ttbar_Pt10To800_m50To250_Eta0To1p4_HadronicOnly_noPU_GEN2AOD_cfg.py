@@ -98,7 +98,7 @@ process.generator = cms.EDFilter("Pythia8PtGunV2",
         MaxEta = cms.double(1.4),
         
         #mass range
-        MinMass = cms.double(50.0),
+        MinMass = cms.double(85.0),
         MaxMass = cms.double(250.0),
 
         #pt range
