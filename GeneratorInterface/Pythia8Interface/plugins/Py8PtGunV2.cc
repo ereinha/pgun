@@ -3,7 +3,6 @@
 #include "GeneratorInterface/ExternalDecays/interface/ExternalDecayDriver.h"
 
 #include "GeneratorInterface/Pythia8Interface/interface/Py8GunBase.h"
-#include "GeneratorInterface/Pythia8Interface/interface/RandomP8.h"
 
 namespace gen {
 
