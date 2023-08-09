@@ -62,11 +62,11 @@ bool Py8PtGunV2::generatePartonsAndHadronize()
 
       int particleID = fPartIDs[i]; // this is PDG - need to convert to Py8 ???
 
-      double phi = (fMaxPhi-fMinPhi) * randomEngine->flat() + fMinPhi;
-      double eta  = (fMaxEta-fMinEta) * randomEngine->flat() + fMinEta;
+      double phi = (fMaxPhi-fMinPhi) * randomEngine().flat() + fMinPhi;
+      double eta  = (fMaxEta-fMinEta) * randomEngine().flat() + fMinEta;
       double the  = 2.*atan(exp(-eta));
 
-      double pt   = (fMaxPt-fMinPt) * randomEngine->flat() + fMinPt;
+      double pt   = (fMaxPt-fMinPt) * randomEngine().flat() + fMinPt;
       //double pt   = fMaxPt - (fMaxPt-fMinPt)*sqrt( randomEngine().flat() );
       //double pt   = fMaxPt - (fMaxPt-fMinPt)*pow(randomEngine().flat(),fPtPow);
       /*
@@ -75,7 +75,7 @@ bool Py8PtGunV2::generatePartonsAndHadronize()
       double pt = a*exp(randomEngine().flat()) - b;
       */
 
-      double mass   = (fMaxMass-fMinMass) * randomEngine->flat() + fMinMass;
+      double mass   = (fMaxMass-fMinMass) * randomEngine().flat() + fMinMass;
       ///*
       //double mass   = log(1. + (randomEngine().flat())*(exp(fMaxMass)-1.) );
       //*/
