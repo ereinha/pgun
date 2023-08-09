@@ -62,12 +62,12 @@ bool Py8JetGun::generatePartonsAndHadronize()
 
       int particleID = fPartIDs[i]; // this is PDG - need to convert to Py8 ???
 
-      phi = 2. * M_PI * randomEngine->flat() ;
-      the = acos( -1. + 2.*randomEngine->flat() );
+      phi = 2. * M_PI * randomEngine().flat() ;
+      the = acos( -1. + 2.*randomEngine().flat() );
 
       // from input
       //
-      ee   = (fMaxE-fMinE)*randomEngine->flat() + fMinE;
+      ee   = (fMaxE-fMinE)*randomEngine().flat() + fMinE;
             
       double mass = (fMasterGen->particleData).m0( particleID );
 
@@ -96,13 +96,13 @@ bool Py8JetGun::generatePartonsAndHadronize()
 
    //now the boost (from input params)
    //
-   pp = (fMaxP-fMinP)*randomEngine->flat() + fMinP;
+   pp = (fMaxP-fMinP)*randomEngine().flat() + fMinP;
    ee = sqrt( totM*totM + pp*pp );	 
 
    //the boost direction (from input params)
    //
-   phi = (fMaxPhi-fMinPhi)*randomEngine->flat() + fMinPhi;
-   eta  = (fMaxEta-fMinEta)*randomEngine->flat() + fMinEta;
+   phi = (fMaxPhi-fMinPhi)*randomEngine().flat() + fMinPhi;
+   eta  = (fMaxEta-fMinEta)*randomEngine().flat() + fMinEta;
    the  = 2.*atan(exp(-eta));
 
    double betaX = pp/ee * std::sin(the) * std::cos(phi);
