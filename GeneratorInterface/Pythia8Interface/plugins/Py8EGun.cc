@@ -62,9 +62,9 @@ bool Py8EGun::generatePartonsAndHadronize()
       // Ouch, it's using bare randomEngine pointer - that's NOT safe.
       // Need to hold a pointer somewhere properly !!!
       //
-      double phi = (fMaxPhi-fMinPhi) * randomEngine->flat() + fMinPhi;
-      double ee   = (fMaxE-fMinE) * randomEngine->flat() + fMinE;
-      double eta  = (fMaxEta-fMinEta) * randomEngine->flat() + fMinEta;
+      double phi = (fMaxPhi-fMinPhi) * randomEngine().flat() + fMinPhi;
+      double ee   = (fMaxE-fMinE) * randomEngine().flat() + fMinE;
+      double eta  = (fMaxEta-fMinEta) * randomEngine().flat() + fMinEta;
       double the  = 2.*atan(exp(-eta));
 
       double mass = (fMasterGen->particleData).m0( particleID );
